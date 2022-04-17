@@ -9,7 +9,7 @@ Game::Game() :
 {
 	window.setVerticalSyncEnabled(true);
 	for (size_t i = 0; i < CACTUS_QTY; i++) {
-		Cactus* cactus = new Cactus();
+		Cactus* cactus = new Cactus(100.f,500.f);
 		cactuses.push_back(cactus);
 	}
 }
@@ -39,7 +39,6 @@ void Game::update() {
 }
 void Game::draw() {
 	window.clear(sf::Color(204, 255, 255));
-	player.draw(window);
 	window.draw(map1.getSprite());
 	window.draw(map2.getSprite());
 	player.draw(window);
